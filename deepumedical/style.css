@@ -65,7 +65,7 @@
 }
 
 #list {
-    width: max-content;
+    width: 300px;
     margin: 50px auto;
     padding: 20px;
     background: white;
@@ -88,13 +88,14 @@
 #medicinename {
     color: #2c3e50;
     margin-bottom: 5px;
-    width: max-content;
+    width: 100%;
 }
 
 #medicneformula {
     color: #7f8c8d;
     margin-bottom: 20px;
-    width: max-content;
+    width: 100%;
+    height: max-content;
 }
 
 .btn-group {
