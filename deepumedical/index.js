@@ -59,10 +59,9 @@ inputsearch.addEventListener("input", () => {
   result.forEach((item) => {
     const div = document.createElement("div");
 
-    div.style.border = "1px solid #000";
-    div.style.padding = "8px";
-    div.style.margin = "6px 0px";
-    div.style.cursor = "pointer";
+    div.classList = "resultmed"
+
+    
 
     div.innerHTML = `
       <b>${item.name || ""}</b><br>
