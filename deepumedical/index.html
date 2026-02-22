@@ -17,9 +17,17 @@
     <div style="width: 100%;height: max-content; border: 1px solid rgb(0, 0, 0);margin: 0px 0px 20px 0px;">
         <img width="100%" src="../images/banner.jpg" alt="">
     </div>
-    <div class="searchdiv">
-        <h2>Medicine Search</h2>
-        <input id="searchinput" type="text" placeholder="Enter medicine name">
+
+
+    <div class="orderdiv">        
+        <button onclick="ordered()" style="width: max-content;margin: 10px; background-color: rgb(85, 243, 85)">order on whatsapp</button>
+    </div>
+
+
+
+    <div class="searchdiv" style="padding: 10px;">
+        <!-- <h2>Medicine Search</h2> -->
+        <input id="searchinput" type="text" placeholder="Search Medicine" style="border: 0px;">
     </div>
     <div id="resultdata"></div>
     <div class="notics" id="notics1">
@@ -36,7 +44,7 @@
 
     <div id="list">
         <span onclick="closeBtn()" class="material-symbols-outlined closeBtn">close</span>
-        <h1 id="medicinename">Medicine Name</h1>
+        <h3 id="medicinename">Medicine Name</h3>
         <span id="medicneformula">Formula</span><br><br>
         <div class="btn-group">
             <button onclick="googlesearch()" class="google">Google Search</button>

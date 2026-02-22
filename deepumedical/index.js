@@ -10,9 +10,12 @@ closebtn1.style.display = "none";
 dataresult.innerHTML = "<p>Loading data...</p>";
 
 
-window.onload = function () {
-    data1()
-};
+
+const medicinetoorder = [];
+
+
+
+
 
 function data1() {
   fetch("https://api.npoint.io/03185e6a9bfcd7262ccc")
@@ -30,9 +33,10 @@ function data1() {
 
 
 
-
+data1()
 
 inputsearch.addEventListener("input", () => {
+
   const value = inputsearch.value.trim().toLowerCase();
   dataresult.innerHTML = "";
   notics1.style.display = "none"
@@ -61,14 +65,24 @@ inputsearch.addEventListener("input", () => {
 
     div.classList = "resultmed"
 
-    
+
 
     div.innerHTML = `
       <b>${item.name || ""}</b><br>
       <span>${item.description || ""}</span>
     `;
 
-    div.addEventListener("click", () => medicinesearch(item));
+    div.addEventListener("click", () => {
+      medicinetoorder.push(item.name)
+
+      var P = document.createElement("span")
+      P.classList = "mediineP";
+      P.innerHTML = item.name;
+      document.getElementsByClassName('orderdiv')[0].style.display = "block"
+      document.getElementsByClassName('orderdiv')[0].prepend(P);
+
+      medicinesearch(item)
+    });
     dataresult.appendChild(div);
   });
 });
@@ -103,3 +117,21 @@ function googlesearch() {
   const encodedk = encodeURIComponent(medicne2[0]);
   window.open(`https://google.com/search?q=${encodedk}`, "_blank");
 }
+
+
+
+function ordered() {
+
+  var whatsappM = ""
+  medicinetoorder.forEach((a, i) => {
+    whatsappM = `${whatsappM} ${i + 1} . ${a} ,`;
+
+
+  })
+
+  const encoded = encodeURIComponent(whatsappM);
+  window.location.href = `https://wa.me/916387215755?text=${encoded} Give me  medicine on my loctaion`;
+
+
+}
+

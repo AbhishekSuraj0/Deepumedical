@@ -3,15 +3,19 @@
     font-family: Arial, sans-serif;
 }
 
+/* Main Search Card */
 .searchdiv {
-    width: 380px;
+    width: 100%;
+    max-width: 380px;
+    /* desktop safe */
     background: white;
     padding: 24px;
-    border-radius: 18px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-    text-align: center;
-    margin: auto;
     padding-top: 50px;
+    border-radius: 18px;
+    text-align: center;
+    margin: 40px auto;
+    /* center properly */
+
     box-shadow: 0.2px 0.5px 10px green;
 }
 
@@ -57,29 +61,31 @@
     transform: scale(.97);
 }
 
+/* Results Container */
 #resultdata {
     background-color: rgb(252, 247, 247);
     width: 100%;
-    height: max-content;
-    /* border: 1px solid black; */
 }
 
+/* Popup / Detail Card */
 #list {
-    width: 300px;
-    margin: 50px auto;
+    width: 90%;
+    max-width: 320px;
     padding: 20px;
     background: white;
     border-radius: 12px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: 0.3s ease-in-out;
     border: 1px solid black;
-    position: absolute;
+
+    position: fixed;
+    /* safer for mobile */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+/* Close button */
 .closeBtn {
     width: 100%;
     text-align: right;
@@ -88,22 +94,23 @@
 #medicinename {
     color: #2c3e50;
     margin-bottom: 5px;
-    width: 100%;
 }
 
 #medicneformula {
     color: #7f8c8d;
     margin-bottom: 20px;
-    width: 100%;
-    height: max-content;
 }
 
+/* Button group */
 .btn-group {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
+    /* prevent squeeze */
 }
 
+/* Global buttons */
 button {
     padding: 10px 15px;
     border: none;
@@ -131,47 +138,107 @@ button {
     background-color: #1e8449;
 }
 
+/* Notices Section */
 .notics {
-    height: 500px;
+    width: 95%;
+    max-width: 500px;
+    min-height: 300px;
+    /* flexible height */
     border: 1px solid black;
-    /* background-image: radial-gradient(rgb(192, 5, 5),rgb(230, 38, 38),rgb(252, 154, 154)); */
     padding: 15px;
     text-align: center;
-    margin: auto;
-    margin-top: 40px;
-
+    margin: 40px auto;
 }
 
+/* Contact Button */
 .contact {
     background-color: green;
-    margin: auto;
-    margin-top: 10px;
-    position: fixed;
-    left: 45%;
     color: white;
-    bottom: 0%;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 18px;
+    border-radius: 10px;
 }
 
+/* Result Items */
 .resultmed {
-    border: 1px solid #e5e7eb;              /* soft gray border */
+    border: 1px solid #e5e7eb;
     padding: 10px 12px;
     margin: 8px 0;
     cursor: pointer;
-    border-radius: 12px;                     /* smoother corners */
+    border-radius: 12px;
     background-color: #ffffff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* modern soft shadow */
-    transition: all 0.2s ease;               /* smooth animation */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
 }
 
-/* Hover effect (important for good UI feel) */
 .resultmed:hover {
-    transform: translateY(-2px);             /* slight lift */
+    transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-    border-color: #22c55e;                   /* subtle green highlight */
+    border-color: #22c55e;
 }
 
-/* Optional active click effect */
 .resultmed:active {
     transform: translateY(0);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orderdiv {
+    width: 100%;
+    height: 100px;
+    border: 1px solid black;
+    margin: auto;
+    padding: 25px;
+    overflow-y: auto;
+    display: none;
+}
+
+
+
+.mediineP {
+    width: max-content;
+    height: min-content;
+    border: 1px solid rgb(247, 242, 242);
+    background-color: rgb(2, 127, 252);
+    color: white;
+    padding: 8px;
+    margin: 2px;
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+
+/* ✅ Mobile Optimization */
+@media (max-width: 480px) {
+
+    .searchdiv {
+        padding: 18px;
+        padding-top: 30px;
+        border-radius: 14px;
+    }
+
+    .searchdiv input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .searchdiv button {
+        font-size: 15px;
+        padding: 11px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        /* stack buttons */
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #list {
+        width: 95%;
+    }
 }
