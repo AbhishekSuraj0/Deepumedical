@@ -4,18 +4,12 @@ const closebtn1 = document.getElementById("list");
 const notics1 = document.getElementById('notics1');
 
 let allData = [];
-let medicne2 = [];
+let medicne2 = null;
 
 closebtn1.style.display = "none";
 dataresult.innerHTML = "<p>Loading data...</p>";
 
-
-
 const medicinetoorder = [];
-
-
-
-
 
 function data1() {
   fetch("https://api.npoint.io/03185e6a9bfcd7262ccc")
@@ -73,36 +67,52 @@ inputsearch.addEventListener("input", () => {
     `;
 
     div.addEventListener("click", () => {
-      medicinetoorder.push(item.name)
-
-      var P = document.createElement("span")
-      P.classList = "mediineP";
-      P.innerHTML = item.name;
-      document.getElementsByClassName('orderdiv')[0].style.display = "block"
-      document.getElementsByClassName('orderdiv')[0].prepend(P);
-
       medicinesearch(item)
+
     });
     dataresult.appendChild(div);
   });
 });
+let setmed = ""
 
 function medicinesearch(item) {
   const medicinename = document.getElementById("medicinename");
   const medicneformula = document.getElementById("medicneformula");
-
+  setmed = item.name
   medicinename.innerHTML = item.name || "";
   medicneformula.innerHTML = item.description || "";
-
-  // ✅ old value remove then add
   medicne2 = [item.name || "", item.description || ""];
-
   closebtn1.style.display = "block";
 }
 
 function closeBtn() {
   closebtn1.style.display = "none";
 }
+
+
+document.getElementById('medicineaddd').addEventListener('click', () => {
+  medicinetoorder.push(setmed)
+  var p = document.createElement('p')
+
+  var whatsappM = ""
+  medicinetoorder.forEach((a, i) => {
+    whatsappM = `${a}`;
+    p.addEventListener('click',()=>{
+      medicinetoorder.pop(p.remove())
+    })
+  })
+
+
+  p.classList = "mediineP"
+  p.innerHTML = whatsappM;
+  document.getElementsByClassName('orderdiv')[0].prepend(p)
+  document.getElementsByClassName('orderdiv')[0].style.display = "block"
+  document.getElementById('list').style.display = "none"
+
+})
+
+
+
 
 function deepumedical() {
   if (!medicne2[0]) return alert("Select Medicine First");
@@ -117,6 +127,10 @@ function googlesearch() {
   const encodedk = encodeURIComponent(medicne2[0]);
   window.open(`https://google.com/search?q=${encodedk}`, "_blank");
 }
+
+
+
+
 
 
 
