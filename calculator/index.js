@@ -33,10 +33,10 @@ function addTable() {
     document.getElementById("date1").innerText = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 
 
-    var rate = Math.round(mrp - mrp*discount/100);
-    var total = rate*qty;
+    var rate = Math.round(mrp - mrp * discount / 100);
+    var total = rate * qty;
 
-    totalmrp += mrp*qty;
+    totalmrp += mrp * qty;
 
     result += total;
 
@@ -64,3 +64,17 @@ function addTable() {
     document.getElementById('qty').value = "";
 
 }
+
+
+function generateCode() {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let code = "";
+    for (let i = 0; i < 10 ; i++) {
+        code += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return code;
+}
+
+ document.getElementById('promocode').innerHTML = `Code : ${generateCode()}`
+
+
