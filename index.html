@@ -1,123 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deepu Medical Offer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepu Medical Offer</title>
+    <link rel="stylesheet" href="style.css">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
-
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#00c853,#64dd17);
-    padding:15px;
-}
-
-.container{
-    background:white;
-    width:100%;
-    max-width:420px;
-    border-radius:25px;
-    padding:30px 20px;
-    text-align:center;
-    box-shadow:0 20px 40px rgba(0,0,0,0.2);
-    animation:fadeIn 1s ease;
-}
-
-h1{
-    font-size:22px;
-    color:#333;
-    margin-bottom:15px;
-}
-
-h1 span{
-    display:block;
-    font-size:26px;
-    color:#00c853;
-    font-weight:bold;
-    margin-top:5px;
-}
-
-/* Responsive Video */
-iframe{
-    width:100%;
-    height:220px;
-    border-radius:15px;
-    margin:15px 0;
-}
-
-/* Button Style */
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:30px;
-    background:#00c853;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-    animation:moveUpDown 1.5s infinite ease-in-out;
-}
-
-/* Hover */
-button:hover{
-    background:#009624;
-    transform:scale(1.05);
-}
-
-/* Click */
-button:active{
-    transform:scale(0.95);
-}
-
-/* Up Down Animation */
-@keyframes moveUpDown{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-    100%{transform:translateY(0);}
-}
-
-/* Fade Animation */
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
-</style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>
-        बधाई हो 🎉  
-        <span>आपको मिलेगा 15% का डिस्काउंट</span>
-    </h1>
+    <div class="container">
+        <h1>
+            बधाई हो 🎉
+            <span>आपको मिलेगा 15% का डिस्काउंट</span>
+        </h1>
 
-    <iframe 
-        src="https://www.youtube.com/embed/YyepU5ztLf4"
-        allowfullscreen>
-    </iframe>
+        <iframe src="https://www.youtube.com/embed/YyepU5ztLf4" allowfullscreen>
+        </iframe>
 
-    <button onclick="firstpage()">Continue</button>
-</div>
+        <button onclick="firstpage()">Continue</button>
+    </div>
 
-<script>
-function firstpage(){
-    window.location.href = "./firstpage/";
-}
-</script>
+    <script>
+        function firstpage() {
+            window.location.href = "./firstpage/";
+        }
+    </script>
 
 </body>
+
 </html>
