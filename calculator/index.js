@@ -65,9 +65,10 @@ function addTable() {
 
 }
 
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 function generateCode() {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    
     let code = "";
     for (let i = 0; i < 10 ; i++) {
         code += chars[Math.floor(Math.random() * chars.length)];
