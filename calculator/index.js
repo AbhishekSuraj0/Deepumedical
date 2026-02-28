@@ -1,5 +1,7 @@
 var result = 0;
 var totalmrp = 0;
+
+
 function addTable() {
     const itmesname = document.getElementById('itemname').value.trim();
     const mrp = document.getElementById('mrp').value.trim();
@@ -78,9 +80,7 @@ function generateCode() {
 
 document.getElementById('promocode').innerHTML = `Code : ${generateCode()}`
 
-var mrpvale = document.getElementById('mrpval')
-
-
+var mrpvale = document.getElementById('mrp')
 mrpvale.addEventListener("input", () => {
     var totalmrp = ""
     totalmrp = Math.round(mrpvale.value - mrpvale.value * 15 / 100)
