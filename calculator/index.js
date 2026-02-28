@@ -68,14 +68,21 @@ function addTable() {
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 function generateCode() {
-    
+
     let code = "";
-    for (let i = 0; i < 10 ; i++) {
+    for (let i = 0; i < 10; i++) {
         code += chars[Math.floor(Math.random() * chars.length)];
     }
     return code;
 }
 
- document.getElementById('promocode').innerHTML = `Code : ${generateCode()}`
+document.getElementById('promocode').innerHTML = `Code : ${generateCode()}`
+
+var mrpvale = document.getElementById('mrpval')
 
 
+mrpvale.addEventListener("input", () => {
+    var totalmrp = ""
+    totalmrp = Math.round(mrpvale.value - mrpvale.value * 15 / 100)
+    document.getElementById('ratevale').placeholder = totalmrp
+})
