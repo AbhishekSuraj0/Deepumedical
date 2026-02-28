@@ -257,17 +257,20 @@ body {
 }
 
 .staff {
-  width: 100%;
+  width: max-content;
   height: 300px;
   border: 1px solid black;
-  background-color: red
+  background-color: rgb(167, 110, 6);
+  border-radius: 10px;
+  margin: auto;
+  padding: 10px;
+  box-shadow: 1px 1px 20px;
 }
-
-
-
 .staff img {
   width: 200px;
-  /* position: absolute; */
-  left: 0;
-  height: 100%;
+  height: 200px;
+  border-radius: 20px
+}
+.staff h3{
+  color: rgb(14, 46, 19);
 }
