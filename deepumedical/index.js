@@ -12,7 +12,7 @@ dataresult.innerHTML = "<p>Loading data...</p>";
 const medicinetoorder = [];
 
 function data1() {
-  fetch("https://api.npoint.io/03185e6a9bfcd7262ccc")
+  fetch("https://api.npoint.io/03185e6a9bfcd7262ccc?t=" + Date.now())
     .then((res) => res.json())
     .then((data) => {
       allData = data;

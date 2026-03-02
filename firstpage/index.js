@@ -14,3 +14,10 @@ document.getElementById('messagetowhatsapp').addEventListener('click', () => {
 });
 
 
+fetch("https://api.npoint.io/38bf6272169995caf595?text="+Date.now())
+.then(res=>res.json())
+.then(data=>{
+    document.getElementById('shopname').textContent = data.Shopname
+    document.getElementsByClassName("k")[0].innerHTML = `<i class="fa-solid fa-phone"> +91 ${data.numbers}`
+    
+})

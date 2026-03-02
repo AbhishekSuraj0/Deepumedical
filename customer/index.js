@@ -7,7 +7,7 @@ var medicinedata = document.getElementById('medicinedata')
 
 
 customerNumber.addEventListener('input', () => {
-  fetch("https://api.npoint.io/b8e4760225ed1bcf6aa4")
+  fetch("https://api.npoint.io/b8e4760225ed1bcf6aa4?t=" + Date.now())
     .then((res) => res.json())
     .then((data) => {
       alldata = data
