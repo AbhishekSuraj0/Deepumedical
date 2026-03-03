@@ -16,6 +16,7 @@ function data1() {
     .then((res) => res.json())
     .then((data) => {
       allData = data ;
+      document.getElementById('totalmedicine').textContent = `Total medicine : ${data.length}`
       dataresult.innerHTML = "";
     })
     .catch((err) => {
