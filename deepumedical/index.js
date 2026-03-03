@@ -60,7 +60,7 @@ inputsearch.addEventListener("input", () => {
 
 
     div.innerHTML = `
-      <b>${item.name || ""}</b><br>
+      <b>${item.name.toUpperCase() || ""}</b><br>
       <span>${item.description || ""}</span><br>
       <span class="viewmps">MRP : ${item.price}</span>
     `;
