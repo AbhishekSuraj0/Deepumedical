@@ -50,6 +50,7 @@ inputsearch.addEventListener("input", () => {
     dataresult.innerHTML = "this medicine is not available";
     return;
   }
+  document.getElementById('totalmedicine').textContent = `Total medicine : ${result.length}`
 
   result.sort().forEach((item) => {
     const div = document.createElement("div");
