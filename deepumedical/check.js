@@ -1,16 +1,11 @@
-const express = require("express");
-require("dotenv").config();
+var links = "https://opensheet.elk.sh/1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ/Sheet1"
 
-const app = express();
-const port = process.env.URLCODE;  
+var links1 = "https://api.npoint.io/03185e6a9bfcd7262ccc"
 
 
-app.get("/code", (req, res) => {
-  res.send(port)
-});
-
-
-
-app.listen(port, () => {
-  console.log("Server running on port");
-});
+fetch(links)
+.then(res => res.json())
+.then(data => {
+    console.log(data);
+})
+.catch(err => console.log("Error:", err));

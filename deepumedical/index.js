@@ -12,10 +12,10 @@ dataresult.innerHTML = "<p>Loading data...</p>";
 const medicinetoorder = [];
 
 function data1() {
-  fetch("https://api.npoint.io/03185e6a9bfcd7262ccc?t=" + Date.now())
+  fetch("https://opensheet.elk.sh/1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ/Sheet1")
     .then((res) => res.json())
     .then((data) => {
-      allData = data;
+      allData = data ;
       dataresult.innerHTML = "";
     })
     .catch((err) => {
@@ -23,10 +23,6 @@ function data1() {
       console.log(err);
     });
 }
-
-
-
-
 data1()
 
 inputsearch.addEventListener("input", () => {
@@ -54,7 +50,7 @@ inputsearch.addEventListener("input", () => {
     return;
   }
 
-  result.forEach((item) => {
+  result.sort().forEach((item) => {
     const div = document.createElement("div");
 
     div.classList = "resultmed"
