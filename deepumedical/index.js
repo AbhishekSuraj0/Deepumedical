@@ -61,7 +61,8 @@ inputsearch.addEventListener("input", () => {
 
     div.innerHTML = `
       <b>${item.name || ""}</b><br>
-      <span>${item.description || ""}</span>
+      <span>${item.description || ""}</span><br>
+      <span class="viewmps">MRP : ${item.price}</span>
     `;
 
     div.addEventListener("click", () => {
