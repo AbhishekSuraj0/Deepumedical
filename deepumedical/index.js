@@ -15,7 +15,7 @@ function data1() {
   fetch("https://opensheet.elk.sh/1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ/Sheet1")
     .then((res) => res.json())
     .then((data) => {
-      allData = data ;
+      allData = data;
       document.getElementById('totalmedicine').textContent = `Total medicine : ${data.length}`
       dataresult.innerHTML = "";
     })
@@ -60,9 +60,8 @@ inputsearch.addEventListener("input", () => {
 
 
     div.innerHTML = `
-      <b>${item.name.toUpperCase() || ""}</b><br>
-      <span class='divdes'>${item.description || ""}</span><br>      
-      <img id="medimage" src="/images/meidicne.png" alt=""></br>
+      <b>${item.name.toUpperCase() || ""}</b><br>    
+      <img id="medimage" onclick="imagediv()" src="/images/meidicne.png" alt=""></br>
       <span class="viewmps">MRP : ${item.price}</span>
       
     `;
@@ -98,7 +97,7 @@ document.getElementById('medicineaddd').addEventListener('click', () => {
   var whatsappM = ""
   medicinetoorder.forEach((a, i) => {
     whatsappM = `${a}`;
-    p.addEventListener('click',()=>{
+    p.addEventListener('click', () => {
       medicinetoorder.pop(p.remove())
     })
   })
@@ -130,8 +129,14 @@ function googlesearch() {
 }
 
 
+function closetab() {
+  document.getElementsByClassName('divimageview')[0].style.display = "none"
+}
 
 
+function imagediv(){
+  document.getElementById("divimageview").style.display = "block"
+}
 
 
 

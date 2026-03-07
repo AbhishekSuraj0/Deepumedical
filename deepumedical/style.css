@@ -19,8 +19,11 @@
 }
 
 #medimage {
-    width: 100px;
-    height: 100px;
+
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    padding-left: 20%;
 }
 
 .searchdiv h2 {
@@ -184,7 +187,7 @@ button {
     height: max-content;
     border: 1px solid black;
     width: 48%;
-    height: 230px;
+    height: 200px;
 
 
 }
@@ -240,14 +243,45 @@ button {
 
 .viewmps {
     color: green;
-    top: 0%;
+    position: absolute;
+    bottom: 3%;
 }
-.divdes{
+
+.divdes {
     padding: 2px 5px;
     width: 100%;
     word-wrap: break-word;
     margin: 10px 0px;
 }
+
+.divimageview {
+    width: 80%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    display: none;
+}
+.divimageview span{
+    font-size: 40px;
+    width: 100%;
+    text-align: end;
+    font-weight: 500;
+    color: red;
+    padding: 0px 7px 0px 0px ;
+}
+
+#imageview{
+    width: 100%;
+    height: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 @keyframes swing {
     0% {
         transform: rotate(0deg);

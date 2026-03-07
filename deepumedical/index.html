@@ -17,7 +17,7 @@
     <div style="width: 100%;height: max-content; border: 1px solid rgb(0, 0, 0);margin: 0px 0px 20px 0px;">
         <img width="100%" src="../images/banner.jpg" alt="">
     </div>
-    <div class="orderdiv">        
+    <div class="orderdiv">
         <button onclick="ordered()" style="z-index: 1;" class="btnofOrder">Order on whatsapp</button>
     </div>
 
@@ -26,27 +26,31 @@
         <input id="searchinput" type="text" placeholder="Search Medicine" style="border: 0px;">
     </div>
     <label style="padding-left: 40%;" id="totalmedicine"></label>
-    
+
     <div id="resultdata"></div>
-    
+
     <div class="notics" id="notics1">
         <h2>Wellcome to Deepu Medical 2026</h2>
         <p>मेडिकल स्टोर की पूरी दवा आप चेक कर सकते हैं,
             ऑनलाइन दवा मंगा सकते हैं, दवा को चेक कर सकते हैं,
             बाद में आप कॉल पे ऑर्डर बोल सकते हैं</p>
     </div>
-    <div  id="list">
+    <div id="list">
         <span onclick="closeBtn()" class="material-symbols-outlined closeBtn">close</span>
         <h3 id="medicinename">Medicine Name</h3>
         <span id="medicneformula">Formula</span><br><br>
         <div class="btn-group">
             <button onclick="googlesearch()" class="google">Google Search</button>
             <button onclick="deepumedical()" class="inquiry">Inquiry to Deepu Medical</button>
-            <button id="medicineaddd" class="inquiry" style="background-color: rgb(231, 10, 47);">Add this itmes</button>
+            <button id="medicineaddd" class="inquiry" style="background-color: rgb(231, 10, 47);">Add this
+                itmes</button>
         </div>
     </div>
     <!-- <a href="https://wa.me/918467822578"><button class="contact">Contact us</button></a> -->
-
+    <div class="divimageview">
+        <span onclick="closetab()" class="material-symbols-outlined">close</span>
+        <img src="/images/meidicne.png" id="imageview" alt="">
+    </div>
 </body>
 <script src="/deepumedical/index.js"></script>
 
