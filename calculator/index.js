@@ -8,7 +8,6 @@ function addTable() {
     const discount = document.getElementById('discount').value.trim();
     const qty = document.getElementById('qty').value.trim();
 
-
     if (!itmesname || !mrp || !discount || !qty) {
         alert("Please Inter All Value")
         return
@@ -86,3 +85,19 @@ mrpvale.addEventListener("input", () => {
     totalmrp = Math.round(mrpvale.value - mrpvale.value * 15 / 100)
     document.getElementById('ratevale').placeholder = totalmrp
 })
+
+
+
+document.getElementById("passwordbox").addEventListener('input', () => {
+    fetch('https://api.npoint.io/38bf6272169995caf595?t=' + Date.now())
+        .then(res => res.json())
+        .then(data => {
+           var s =  document.getElementById("passwordbox").value
+            if (data.password == s) {
+                document.getElementsByClassName("viewopen")[0].style.display = "block"
+                document.getElementById('passwordbox').style.display = "none"
+            }
+        })
+})
+
+
