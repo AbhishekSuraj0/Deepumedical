@@ -7,23 +7,17 @@
 .searchdiv {
     width: 100%;
     max-width: 380px;
-    /* desktop safe */
     background: white;
     padding: 24px;
     padding-top: 50px;
     border-radius: 18px;
     text-align: center;
-    margin: 40px auto;
-    /* center properly */
+    margin: 40px auto; 
     box-shadow: 0.2px 0.5px 10px green;
-    position: fixed;
-    z-index: 3;
-    top: 10%;
-    left: 20%;
+
 }
 
 #medimage {
-
     align-items: center;
     justify-content: center;
     height: 120px;
