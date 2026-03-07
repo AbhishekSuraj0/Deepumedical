@@ -15,10 +15,13 @@
     text-align: center;
     margin: 40px auto;
     /* center properly */
-
     box-shadow: 0.2px 0.5px 10px green;
 }
 
+#medimage {
+    width: 100px;
+    height: 100px;
+}
 
 .searchdiv h2 {
     margin-bottom: 16px;
@@ -67,6 +70,9 @@
     background-color: rgb(252, 247, 247);
     width: 500px;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 /* Popup / Detail Card */
@@ -177,6 +183,10 @@ button {
     position: relative;
     height: max-content;
     border: 1px solid black;
+    width: 48%;
+    height: 230px;
+
+
 }
 
 .resultmed:hover {
@@ -230,14 +240,14 @@ button {
 
 .viewmps {
     color: green;
-    position: absolute;
-    /* background-color: red; */
-    right: 7%;
-    top: 5%;
-    
-
+    top: 0%;
 }
-
+.divdes{
+    padding: 2px 5px;
+    width: 100%;
+    word-wrap: break-word;
+    margin: 10px 0px;
+}
 @keyframes swing {
     0% {
         transform: rotate(0deg);
@@ -286,11 +296,12 @@ button {
         flex-direction: column;
         /* stack buttons */
     }
+
     #resultdata {
-    background-color: rgb(252, 247, 247);
-    width: 100%;
-    margin: auto;
-}
+        background-color: rgb(252, 247, 247);
+        width: 100%;
+        margin: auto;
+    }
 
     button {
         width: 100%;

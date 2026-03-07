@@ -61,8 +61,10 @@ inputsearch.addEventListener("input", () => {
 
     div.innerHTML = `
       <b>${item.name.toUpperCase() || ""}</b><br>
-      <span>${item.description || ""}</span><br>
+      <span class='divdes'>${item.description || ""}</span><br>      
+      <img id="medimage" src="/images/meidicne.png" alt=""></br>
       <span class="viewmps">MRP : ${item.price}</span>
+      
     `;
 
     div.addEventListener("click", () => {
