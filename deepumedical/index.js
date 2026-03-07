@@ -141,12 +141,9 @@ function imagediv(){
 
 
 function ordered() {
-
   var whatsappM = ""
   medicinetoorder.forEach((a, i) => {
     whatsappM = `${whatsappM} ${i + 1} . ${a} ,`;
-
-
   })
 
   const encoded = encodeURIComponent(whatsappM);
