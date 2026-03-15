@@ -86,8 +86,6 @@ mrpvale.addEventListener("input", () => {
     document.getElementById('ratevale').placeholder = totalmrp
 })
 
-
-
 document.getElementById("passwordbox").addEventListener('input', () => {
     fetch('https://api.npoint.io/38bf6272169995caf595?t=' + Date.now())
         .then(res => res.json())
