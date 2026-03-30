@@ -25,7 +25,8 @@ customerNumber.addEventListener('input', () => {
         // console.log(item)
         const number = item.customerNumber;
         const name = (item.customerName).toLowerCase() ;
-        return number.includes(value) || name.includes(value) || item.category.toLowerCase().includes(value)
+        const catagores = item.category.toLowerCase()
+        return number.includes(value) || name.includes(value) || catagores.includes(value)
       })
       
 
