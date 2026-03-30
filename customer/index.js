@@ -10,7 +10,7 @@ customerNumber.addEventListener('input', () => {
   fetch("https://opensheet.elk.sh/1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ/Customer")
     .then((res) => res.json())
     .then((data) => {
-      const value = customerNumber.value;
+      const value = customerNumber.value.toLowerCase;
       searchvalue.innerHTML = '';
       close.style.display = "none"
 
