@@ -23,10 +23,11 @@ customerNumber.addEventListener('input', () => {
 
       const result = data.filter((item) => {
         // console.log(item)
-        const number = (item.customerNumber);
-        const name = (item.customerName).toLowerCase()
-        return number.includes(value) || name.includes(value)
+        const number = item.customerNumber;
+        const name = (item.customerName).toLowerCase() ;
+        return number.includes(value) || name.includes(value) || item.category.toLowerCase().includes(value)
       })
+      
 
       // console.log(result)
 
@@ -42,7 +43,7 @@ customerNumber.addEventListener('input', () => {
         div.style.margin = "6px 0px";
         div.style.cursor = "pointer";
         div.innerHTML = `
-      <b>${item.customerNumber || item.customerName}</br>`;
+      <b>${item.customerNumber}</b>`;
         searchvalue.appendChild(div)
 
 
