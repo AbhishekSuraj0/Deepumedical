@@ -84,6 +84,7 @@ function close2() {
 
 
 
+
 function checkmedicine() {
   fetch("https://opensheet.elk.sh/1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ/customermdicine")
     .then(res => res.json())
@@ -91,18 +92,31 @@ function checkmedicine() {
 
       medicinedata.innerHTML = "";
 
+      let found = false; // 🔥 track karega data mila ya nahi
+
       data.forEach(items => {
 
-        let value = items[customerMedicine]; // 🔥 main fix
+        let value = items[customerMedicine];
 
         if (value && value.trim() !== "") {
-          let li = document.createElement("li");
-          li.style.color = "black";
-          li.innerText = value;
+          found = true;
 
-          medicinedata.appendChild(li);
+          if (found) {
+            let li = document.createElement("li");
+            li.style.color = "black";
+            li.innerText = value;
+
+            medicinedata.appendChild(li);
+          }
+
+
         }
       });
+
+      // 🔥 loop ke baad check
+      if (!found) {
+        alert("No medicine found");
+      }
 
       viewmedicien.style.display = "block";
     })
