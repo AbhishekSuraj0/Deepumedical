@@ -56,6 +56,7 @@ customerNumber.addEventListener('input', () => {
           custname.innerHTML = `${item.customerName}`
           custnumber.innerHTML = item.customerNumber
           Catagories.innerHTML = item.category
+          document.getElementById('lastvist').innerText = item.lastvisit
 
 
           close.style.display = "block"
