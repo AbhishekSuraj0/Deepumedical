@@ -91,13 +91,10 @@ function checkmedicine() {
     .then(data => {
 
       medicinedata.innerHTML = "";
-
       let found = false; // 🔥 track karega data mila ya nahi
 
       data.forEach(items => {
-
-        let value = items[customerMedicine];
-
+        let value = items[customerMedicine];      
         if (value && value.trim() !== "") {
           found = true;
 
@@ -108,8 +105,6 @@ function checkmedicine() {
 
             medicinedata.appendChild(li);
           }
-
-
         }
       });
 
