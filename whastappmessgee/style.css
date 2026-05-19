@@ -8,7 +8,7 @@
     /* background-color: aqua; */
     width: 400px;
     height:max-content;
-    background-color: rgb(38, 5, 2);
+    /* background-color: rgb(38, 5, 2); */
     margin: auto;
 }
 
@@ -16,10 +16,11 @@
     width: 100%;
     height: max-content;
     text-align: center;
-    margin: 5px 0;
+    margin: 10px 0;
     /* background-color: rgb(68, 232, 9); */
-    padding: 5px;
+    padding: 10px;
     color: rgb(24, 1, 1);
     font-size: 15px;
-    text-shadow: 0px 0px 1px rgb(95, 107, 3);
+    /* text-shadow: 0px 0px 1px rgb(95, 107, 3); */
+    border-radius: 10px;
 }

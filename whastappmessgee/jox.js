@@ -18,11 +18,11 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
         // Color set
         if(element.color.trim().toLowerCase() === "green"){
 
-            div.style.backgroundColor = "rgb(68, 232, 9)";
+            div.style.backgroundColor = "rgb(141, 236, 106)";
 
         }else{
 
-            div.style.backgroundColor = "rgb(238, 80, 12)";
+            div.style.backgroundColor = "rgb(247, 151, 109)";
         }
 
         // Click Event
@@ -37,7 +37,7 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
             })
             .then(res => res.text())
             .then(result => {
-                div.style.backgroundColor = "rgb(238, 80, 12)";
+                div.style.backgroundColor = "rgb(246, 127, 76)";
 
             })            
             .catch(err => console.log(err));
