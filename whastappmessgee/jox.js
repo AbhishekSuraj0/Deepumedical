@@ -41,7 +41,7 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
 
             })            
             .catch(err => console.log(err));
-            window.open(`https://wa.me/${element.numberx}`,"_blank")
+            window.open(`https://wa.me/${element.numberx}`)
         });
 
         document.querySelector(".maindiv").appendChild(div);
