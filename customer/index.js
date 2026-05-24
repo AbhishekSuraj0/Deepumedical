@@ -52,12 +52,14 @@ customerNumber.addEventListener('input', () => {
           let custname = document.getElementById('custName')
           let custnumber = document.getElementById('custMobile')
           let Catagories = document.getElementById('custCatagories')
+          let discount = document.getElementById("disount")
           viewmedicien.style.display = "none"
           medicinedata.innerHTML = ""
           customerMedicine = item.customermedicine
           custname.innerHTML = `${item.customerName}`
           custnumber.innerHTML = item.customerNumber
           Catagories.innerHTML = item.category
+          discount.innerHTML = item.CustomerDiscount
           document.getElementById('lastvist').innerText = item.lastvisit
 
 
