@@ -21,7 +21,12 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
             }
             // Click Event
             div.addEventListener("click", () => {
-                fetch(scdata, {
+
+                var textmsg = document.getElementById('inputdata').value ;
+
+
+                if(textmsg != ""){
+                    fetch(scdata, {
                     method: "POST",
                     mode: "no-cors",
                     body: JSON.stringify({
@@ -35,7 +40,13 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
 
                     })
                     .catch(err => console.log(err));
-                window.open(`https://wa.me/91${element.numberx}`)
+                window.open(`https://wa.me/91${element.numberx}?text=${textmsg}`)
+                } else{
+                    alert("PLease , Enter Message")
+                }
+
+
+                
             });
 
             document.querySelector(".maindiv").appendChild(div);
@@ -45,19 +56,8 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
     })
     .catch(err => console.log(err));
 
+document.querySelector(".maindiv").style.display = "block";
 
 
-document.getElementById("inputdata").addEventListener("change", (e) => {
-    fetch('https://api.npoint.io/38bf6272169995caf595')
-        .then(res => res.json())
-        .then(data => {
-            if(e.target.value === data.password){
-                e.target.style.display = "none";
-                document.querySelector(".maindiv").style.display = "block";
-                
-            }
-        })
-        .catch(err => console.log(err));
-});
 
 
