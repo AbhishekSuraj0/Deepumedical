@@ -11,7 +11,7 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
 
             const div = document.createElement("div");
             div.classList.add("div1");
-            div.innerHTML = element.numberx;
+            div.innerHTML = "Message on Different Number";
 
             // Color set
             if (element.color.trim().toLowerCase() === "green") {
@@ -52,8 +52,9 @@ document.getElementById("inputdata").addEventListener("change", (e) => {
         .then(res => res.json())
         .then(data => {
             if(e.target.value === data.password){
-                document.querySelector(".maindiv").style.display = "block";
                 e.target.style.display = "none";
+                document.querySelector(".maindiv").style.display = "block";
+                
             }
         })
         .catch(err => console.log(err));
