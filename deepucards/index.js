@@ -36,5 +36,6 @@ document.getElementById("customeraddress").addEventListener('input',()=>{
 
 
 document.getElementById("submitbtn").addEventListener("click",()=>{
+    
     document.getElementsByClassName("card")[0].style.display = "block"
 })
