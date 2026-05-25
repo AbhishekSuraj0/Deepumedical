@@ -136,9 +136,9 @@ body {
 .itmes1 {
     /* background-color: red; */
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 5px;
     justify-content: center;
     align-items: center;
 }
@@ -147,8 +147,7 @@ body {
     background-color: #b4d5f6;
     border-radius: 10px;
     padding: 10px;
-    font-size: 11px;
-
+    font-size: 10px;
 }
 
 .formdata {
