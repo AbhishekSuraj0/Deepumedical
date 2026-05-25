@@ -211,14 +211,14 @@ body {
 }
 
 @media(max-width:580px) {
-    .photo{
+    .photo {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
     }
 
-    .photo img{
+    .photo img {
         display: block;
         margin: auto;
     }
