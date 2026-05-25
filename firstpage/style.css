@@ -29,6 +29,20 @@ body {
   z-index: 1000;
 }
 
+.imgbtn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.imgbtn img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -266,11 +280,13 @@ body {
   padding: 10px;
   box-shadow: 1px 1px 20px;
 }
+
 .staff img {
   width: 200px;
   height: 200px;
   border-radius: 20px
 }
-.staff h3{
+
+.staff h3 {
   color: rgb(14, 46, 19);
 }
