@@ -8,34 +8,45 @@ fileinput.onchange = function () {
     reader.readAsDataURL(customerimg.files[0]);
 }
 
-document.getElementById("customername").addEventListener('input',()=>{
+document.getElementById("customername").addEventListener('input', () => {
     var a = document.getElementById("customername").value
     document.getElementById("custname").innerText = a
 })
 
 
 
-document.getElementById("customernum").addEventListener('input',()=>{
+document.getElementById("customernum").addEventListener('input', () => {
     var a = document.getElementById("customernum").value
     document.getElementById("custnum").innerText = a
 })
 
 
 
-document.getElementById("customeraddress").addEventListener('input',()=>{
+document.getElementById("customeraddress").addEventListener('input', () => {
     var a = document.getElementById("customeraddress").value
     document.getElementById("custaddress").innerText = a
 })
+document.getElementById("submitbtn").addEventListener("click", () => {
 
-
-
-
-
-
-
-
-
-document.getElementById("submitbtn").addEventListener("click",()=>{
-    
-    document.getElementsByClassName("card")[0].style.display = "block"
+    document.getElementsByClassName("card")[0].style.display = "block";
+    document.getElementById("shareone").style.display = "block"
 })
+
+
+let shareone = document.getElementById("shareone");
+
+shareone.addEventListener("click", () => {
+
+    html2canvas(document.getElementById("card")).then(canvas => {
+
+        let link = document.createElement("a");
+
+        link.download = "DeepuMedicalCard.png";
+
+        link.href = canvas.toDataURL("image/png");
+
+        link.click();
+
+    });
+
+});
