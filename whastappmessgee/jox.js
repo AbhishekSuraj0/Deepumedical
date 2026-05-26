@@ -3,15 +3,13 @@ const scdata =
 
 fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/whatsappdata")
     .then(res => res.json())
-    .then(data => {
+    .then((data) => {
 
         document.querySelector(".maindiv").innerHTML = "";
-
-        data.forEach(element => {
-
+        data.forEach((element,i) => {
             const div = document.createElement("div");
             div.classList.add("div1");
-            div.innerHTML = "Message on Different Number";
+            div.innerHTML = `${i+1} .  Message on Different Number`;
 
             // Color set
             if (element.color.trim().toLowerCase() === "green") {
