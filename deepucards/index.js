@@ -1,5 +1,7 @@
 const fileinput = document.getElementById("customerimg")
 const showimage = document.getElementById("showimg")
+
+
 fileinput.onchange = function () {
     let reader = new FileReader();
     reader.onload = function (e) {
@@ -40,11 +42,8 @@ shareone.addEventListener("click", () => {
     html2canvas(document.getElementById("card")).then(canvas => {
 
         let link = document.createElement("a");
-
         link.download = "DeepuMedicalCard.png";
-
         link.href = canvas.toDataURL("image/png");
-
         link.click();
 
     });
