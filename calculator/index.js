@@ -85,17 +85,19 @@ mrpvale.addEventListener("input", () => {
     totalmrp = Math.round(mrpvale.value - mrpvale.value * 15 / 100)
     document.getElementById('ratevale').placeholder = totalmrp
 })
+document.getElementsByClassName("viewopen")[0].style.display = "block"
 
-document.getElementById("passwordbox").addEventListener('input', () => {
-    fetch('https://api.npoint.io/38bf6272169995caf595?t=' + Date.now())
-        .then(res => res.json())
-        .then(data => {
-           var s =  document.getElementById("passwordbox").value
-            if (data.password == s) {
-                document.getElementsByClassName("viewopen")[0].style.display = "block"
-                document.getElementById('passwordbox').style.display = "none"
-            }
-        })
-})
+
+// document.getElementById("passwordbox").addEventListener('input', () => {
+//     fetch('https://api.npoint.io/38bf6272169995caf595?t=' + Date.now())
+//         .then(res => res.json())
+//         .then(data => {
+//            var s =  document.getElementById("passwordbox").value
+//             if (data.password == s) {
+                
+//                 document.getElementById('passwordbox').style.display = "none"
+//             }
+//         })
+// })
 
 
