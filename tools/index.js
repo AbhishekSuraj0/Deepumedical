@@ -62,7 +62,10 @@ function checkdiscount() {
 
     if (rate && mrp) {
         // Correct Formula: ((MRP - Rate) / MRP) * 100
-        let discountPercentage = ((mrp - rate) / mrp) * 100;
+
+        let discountPercentage = mrp - rate/mrp *100
+
+        
         resultData.innerHTML = `Yaha pe appko ${discountPercentage.toFixed(2)}% discount mila`;
     } else {
         alert("Please Enter MRP and Rate");
