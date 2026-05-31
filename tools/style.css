@@ -1,0 +1,156 @@
+/* --- Google Fonts Integration --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Reset & Core Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 20px;
+}
+
+/* --- Container App Card --- */
+#tools {
+    background: #f6c7c7;
+    width: 100%;
+    max-width: 480px;
+    padding: 30px;
+    height: max-content;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* --- Dropdown Selector --- */
+#toolselector {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+    background-color: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+}
+
+#toolselector:focus {
+    border-color: #4f46e5;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* --- Content & Form Wrapper --- */
+.discountCheck {
+    display: none; /* Controlled by your JS */
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* --- Input Fields Styles --- */
+.discountCheck input[type="number"] {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    background-color: #f8fafc;
+    color: #1e293b;
+    transition: all 0.3s ease;
+}
+
+.discountCheck input[type="number"]:focus {
+    border-color: #4f46e5;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Chrome, Safari, Edge, Opera se extra arrow hatane ke liye */
+.discountCheck input::-webkit-outer-spin-button,
+.discountCheck input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox ke liye number arrow remove */
+.discountCheck input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* --- Buttons Layout & Styles --- */
+.discountCheck div[style*="display: flex"] {
+    gap: 12px !important; /* Overriding your inline margin style smoothly */
+    margin-top: 8px;
+}
+
+.discountCheck button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.discountCheck button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+}
+
+.discountCheck button:active {
+    transform: translateY(1px);
+}
+
+/* --- Result Section --- */
+#resultdata1 {
+    display: block;
+    margin-top: 25px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: #065f46;
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 10px;
+}
+
+/* Display empty result neatly */
+#resultdata1:empty {
+    display: none;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

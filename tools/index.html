@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="tools">
+        <select name="" id="toolselector">
+            <option nonce="" value="">Select anyone</option>
+            <option value="checkDiscount">Check Rate</option>
+            <option value="checkrate">Check Discount</option>
+            <option value="ProductDetails">Product Details</option>
+        </select>
+        <div id="resultdata">
+            <div class="discountCheck">
+
+
+                <input id="mrpvalue" placeholder="Enter Your MRP" type="number">
+                <input id="discountvalue" placeholder="Enter Your Discount" type="number">
+                <input id="gst" placeholder="Enter Your Gst" type="number">
+                <input id="ratedata" placeholder="Enter Your Rate" type="number"><br>
+
+
+                <div style="display: flex;flex-direction: column;gap: 20px;">
+
+                    <button id="checkrate" onclick="checkmrp()">Check Rate</button>
+                    <button id="checkdiscount" onclick="checkdiscount()">Check Discount</button>
+                    <button id="productdetails" onclick="productdetails()">Check Product Deatils</button>
+
+                    
+                </div>
+
+
+                <div id="resultdata1" for=""></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
