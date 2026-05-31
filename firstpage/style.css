@@ -15,6 +15,13 @@ body {
   color: #333;
   line-height: 1.6;
 }
+#formdata1{
+  background-color: red;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
 
 /* =============================
    HEADER & NAVBAR
