@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Memo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div id="maindiv">
+        <div class="header-section">
+            <div class="shop-details">
+                <h1>Deepu Medicals</h1>
+                <p>352, Sec - Q, Maha kavi Jai Shankar</p>
+                <p><strong>Mob:</strong> 8467822578</p>
+            </div>
+            <div class="license-details">
+                <span class="memo-title">Cash Memo</span>
+                <strong>Lic No :</strong> 20-UP32200001921<br>
+                <strong>Lic No :</strong> 21-UP32210001917<br>
+                <strong>G.S.T:</strong> 09GWUPS1959C1ZQ
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-group">
+                <label>Pt. Name:</label>
+                <input style="margin: 1%;" id="patientname" type="text" placeholder="Enter patient name">
+            </div>
+            <div class="info-group">
+                <label>Date:</label>
+                <input style="margin: 1%;" type="text" placeholder="DD/MM/YYYY" value="06/06/2026">
+            </div>
+            <div class="info-group" style="grid-column: span 2;">
+                <label>Dr. Name:</label>
+                <input style="margin: 1%;" type="text" placeholder="Enter doctor's name">
+            </div>
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 8%;">QTY</th>
+                        <th style="width: 45%;">Particulars</th>
+                        <th style="width: 10%;">MRP</th>
+                        <th style="width: 17%;">Batch No.</th>
+                        <th style="width: 15%;">Exp.</th>
+                        <th class="text-right" style="width: 15%;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="tabledata">
+
+                </tbody>
+
+            </table>
+            <div id="totalAamount"></div>
+        </div>
+
+        <div class="footer-section">
+
+            <div class="signature-area">
+                <div class="signature-line">Authorized Signatory</div>
+            </div>
+        </div>
+    </div>
+    <div class="shareaddbtn">
+        <button onclick="s()">Share</button>
+        <button onclick="ai()">Add Itmes</button>
+    </div>
+    <br>
+    <div id="inputdata">
+        <label id="closebtn">X</label>
+        <div>
+            <label for="">Enter Medicine name</label>
+            <input id="medicinename" type="text" placeholder="Enter medicine name">
+        </div>
+
+        <div class="k">
+            <div>
+                <label for="">Enter Qty</label>
+                <input id="qty" style="width: 100px;" type="number" placeholder="QTY">
+            </div>
+            <div>
+                <label for="">Enter MRP</label>
+                <input id="mrp" style="width: 100px;" type="number" placeholder="MRP">
+            </div>
+            <div>
+                <label for="">Batch No.</label>
+                <input id="batchno" style="width: 100px;" type="text" placeholder="Batch No.">
+            </div>
+            <div>
+                <label for="">Enter Expiry</label>
+                <input id="expiry" style="width: 100px;" type="text" placeholder="Enter expiry date">
+            </div>
+        </div>
+
+        <button onclick="addRow()">Add Row</button>
+    </div>
+
+</body>
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</html>
