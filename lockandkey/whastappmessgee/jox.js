@@ -1,61 +1,58 @@
-const scdata =
-    "https://script.google.com/macros/s/AKfycbyc8dj5vgdZ9jH9LsCvv-2FIlqKbxwrSxOiv_pTB8Q0zUq-0diOpntaqbQaIM2Acuf4/exec";
+const scdata = "https://script.google.com/macros/s/AKfycbyc8dj5vgdZ9jH9LsCvv-2FIlqKbxwrSxOiv_pTB8Q0zUq-0diOpntaqbQaIM2Acuf4/exec";
 
+// Fetch data from the Google Sheet API proxy
 fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/whatsappdata")
     .then(res => res.json())
     .then((data) => {
+        const mainDiv = document.querySelector(".maindiv");
+        mainDiv.innerHTML = ""; // Clear existing placeholder content
 
-        document.querySelector(".maindiv").innerHTML = "";
-        data.forEach((element,i) => {
+        data.forEach((element, i) => {
             const div = document.createElement("div");
             div.classList.add("div1");
-            div.innerHTML = `${i+1} .  Message on Different Number`;
+            div.innerHTML = `${i + 1}. Message on Different Number`;
 
-            // Color set
-            if (element.color.trim().toLowerCase() === "green") {
-                div.style.backgroundColor = "rgb(141, 236, 106)";
+            // Initial color setup based on sheet data
+            if (element.color && element.color.trim().toLowerCase() === "green") {
+                div.style.backgroundColor = "rgb(141, 236, 106)"; // Green
             } else {
-                div.style.backgroundColor = "rgb(247, 151, 109)";
+                div.style.backgroundColor = "rgb(247, 151, 109)"; // Orange/Coral
             }
-            // Click Event
+
+            // Click Event for sending message and tracking
             div.addEventListener("click", () => {
+                const textmsg = document.getElementById('inputdata').value.trim();
 
-                var textmsg = document.getElementById('inputdata').value ;
+                if (textmsg !== "") {
+                    // 1. Change color instantly so the UI feels responsive
+                    div.style.backgroundColor = "rgb(246, 127, 76)"; 
 
-
-                if(textmsg != ""){
+                    // 2. Fire and forget POST request to Google Script
                     fetch(scdata, {
-                    method: "POST",
-                    mode: "no-cors",
-                    body: JSON.stringify({
-                        number: element.numberx,
-                        color: "red"
-                    })
-                })
-                    .then(res => res.text())
-                    .then(result => {
-                        div.style.backgroundColor = "rgb(246, 127, 76)";
+                        method: "POST",
+                        mode: "no-cors", // Opaque response rule applies
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            number: element.numberx,
+                            color: "red"
+                        })
+                    }).catch(err => console.error("Tracking failed:", err));
 
-                    })
-                    .catch(err => console.log(err));
-                window.open(`https://wa.me/91${element.numberx}?text=${textmsg}`)
-                } else{
-                    alert("PLease , Enter Message")
+                    // 3. Open WhatsApp with URL-safe text formatting
+                    const safeMessage = encodeURIComponent(textmsg);
+                    window.open(`https://wa.me/91${element.numberx}?text=${safeMessage}`, '_blank');
+
+                } else {
+                    alert("Please enter a message first!");
                 }
-
-
-                
             });
 
-            document.querySelector(".maindiv").appendChild(div);
-
+            mainDiv.appendChild(div);
         });
-
     })
-    .catch(err => console.log(err));
+    .catch(err => console.error("Error fetching list:", err));
 
+// Ensure container is visible
 document.querySelector(".maindiv").style.display = "block";
-
-
-
-
