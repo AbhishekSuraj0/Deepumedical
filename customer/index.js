@@ -37,6 +37,7 @@ customerNumber.addEventListener('input', () => {
         return
       }
       result.forEach((item) => {
+
         const div = document.createElement('div');
         div.style.border = "1px solid #000";
         div.style.padding = "8px";
