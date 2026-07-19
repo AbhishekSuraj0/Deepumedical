@@ -1,13 +1,18 @@
 const scdata = "https://script.google.com/macros/s/AKfycbyc8dj5vgdZ9jH9LsCvv-2FIlqKbxwrSxOiv_pTB8Q0zUq-0diOpntaqbQaIM2Acuf4/exec";
 
+
+
 // Fetch data from the Google Sheet API proxy
 fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/whatsappdata")
     .then(res => res.json())
     .then((data) => {
         const mainDiv = document.querySelector(".maindiv");
-        mainDiv.innerHTML = ""; // Clear existing placeholder content
+        mainDiv.innerHTML = "";
 
-        data.forEach((element, i) => {
+
+
+
+        data.slice(0, 100).forEach((element, i) => {
             const div = document.createElement("div");
             div.classList.add("div1");
             div.innerHTML = `${i + 1}. Message on Different Number`;
@@ -25,7 +30,7 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
 
                 if (textmsg !== "") {
                     // 1. Change color instantly so the UI feels responsive
-                    div.style.backgroundColor = "rgb(246, 127, 76)"; 
+                    div.style.backgroundColor = "rgb(246, 127, 76)";
 
                     // 2. Fire and forget POST request to Google Script
                     fetch(scdata, {
@@ -56,3 +61,5 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
 
 // Ensure container is visible
 document.querySelector(".maindiv").style.display = "block";
+
+
