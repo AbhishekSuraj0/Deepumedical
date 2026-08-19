@@ -1,125 +1,69 @@
+var contactData = document.getElementById("contactData");
 
-var customerNumber = document.getElementById("customernumber")
-var searchvalue = document.getElementById('searchvalue')
-let close = document.getElementById('customerDetails')
-var customerMedicine = ''
-var medicinedata = document.getElementById('medicinedata')
+var sheet = "1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ";
 
+fetch(`https://opensheet.elk.sh/${sheet}/customer`)
+  .then(res => res.json())
+  .then(data => {
 
-customerNumber.addEventListener('input', () => {
-  fetch("https://opensheet.elk.sh/1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ/Customer")
-    .then((res) => res.json())
-    .then((data) => {
-      const value = customerNumber.value;
-      searchvalue.innerHTML = '';
-      close.style.display = "none"
+    data.forEach(k => {
 
-      if (!value) return;
+      var div = document.createElement("div");
 
-      if (data === 0) {
-        searchvalue.innerHTML = "this Number is not avaiable"
-        return
-      }
+      div.className = "datalist";
 
-      const result = data.filter((item) => {
-        // console.log(item)
-        const number = item.customerNumber;
-        const name = (item.customerName).toLowerCase() ;
-        const catagores = item.category.toLowerCase()
-        return number.includes(value) || name.includes(value) || catagores.includes(value)
-      })
-      
+      div.innerHTML = `
+        <label>${k.customerName} - (${k.customerNumber})</label>
 
-      // console.log(result)
+        <div class="btnd" style="display: none;">
+          <button class="whatappbtn">WhatsApp</button>
+          <button class="callNow">Call Now</button>
+        </div>
+      `;
 
-      if (result.length === 0) {
-        searchvalue.innerHTML = "this cutomer is not here"
-        return
-      }
-      result.forEach((item) => {
+      contactData.append(div);
 
-        const div = document.createElement('div');
-        div.style.border = "1px solid #000";
-        div.style.padding = "8px";
-        div.style.background = "white"
-        div.style.margin = "6px 0px";
-        div.style.cursor = "pointer";
-        div.innerHTML = `
-      <b>${item.customerNumber}</b>`;
-        searchvalue.appendChild(div)
+      var whatsappbtn = div.querySelector(".whatappbtn");
+      var callNow = div.querySelector(".callNow");
+      var seetbn = div.querySelector(".btnd");
 
 
-        div.addEventListener('click', () => {
-          let custname = document.getElementById('custName')
-          let custnumber = document.getElementById('custMobile')
-          let Catagories = document.getElementById('custCatagories')
-          let discount = document.getElementById("disount")
-          viewmedicien.style.display = "none"
-          medicinedata.innerHTML = ""
-          customerMedicine = item.customermedicine
-          custname.innerHTML = `${item.customerName}`
-          custnumber.innerHTML = item.customerNumber
-          Catagories.innerHTML = item.category
-          discount.innerHTML = item.CustomerDiscount
-          document.getElementById('lastvist').innerText = item.lastvisit
+      // Customer div click
+      div.addEventListener("click", () => {
 
+        // Sabhi buttons hide karo
+        document.querySelectorAll(".btnd").forEach(btn => {
+          btn.style.display = "none";
+        });
 
-          close.style.display = "block"
-        })
-      })
-    })
+        // Current customer ka button show karo
+        seetbn.style.display = "block";
 
-    .catch(err => { console.log(err) })
-}
-)
-
-
-
-
-
-function close1() {
-  close.style.display = "none"
-}
-
-let viewmedicien = document.getElementsByClassName('viewmedicien')[0]
-
-function close2() {
-  viewmedicien.style.display = "none"
-}
-
-
-
-
-
-function checkmedicine() {
-  fetch("https://opensheet.elk.sh/1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ/customermdicine")
-    .then(res => res.json())
-    .then(data => {
-
-      medicinedata.innerHTML = "";
-      let found = false; // 🔥 track karega data mila ya nahi
-
-      data.forEach(items => {
-        let value = items[customerMedicine];      
-        if (value && value.trim() !== "") {
-          found = true;
-
-          if (found) {
-            let li = document.createElement("li");
-            li.style.color = "black";
-            li.innerText = value;
-
-            medicinedata.appendChild(li);
-          }
-        }
       });
 
-      // 🔥 loop ke baad check
-      if (!found) {
-        alert("No medicine found");
-      }
 
-      viewmedicien.style.display = "block";
-    })
-    .catch(err => console.log(err));
-}
+      // WhatsApp
+      whatsappbtn.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        window.open(`https://wa.me/91${k.customerNumber}`, "_blank");
+
+      });
+
+
+      // Call
+      callNow.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        window.location.href = `tel:${k.customerNumber}`;
+
+      });
+
+    });
+
+  })
+  .catch(err => {
+    console.log("Error:", err);
+  });

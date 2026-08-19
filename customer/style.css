@@ -1,166 +1,45 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg, #eef2f7, #dfe9f3);
-}
-
-/* Center */
 .container {
-  /* min-height: 100vh; */
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-/* Card */
-.card {
-  width: 420px;
-  background: #fff;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.card h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
-
-/* Search box */
-.searchBox label {
-  font-size: 14px;
-  color: #555;
-}
-
-.inputRow {
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
-}
-
-.inputRow input {
-  flex: 1;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  outline: none;
-}
-
-.inputRow input:focus {
-  border-color: #0373eb;
-}
-
-.inputRow button {
-  background: #0373eb;
-  color: #fff;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.inputRow button:hover {
-  background: #025ac0;
-}
-
-/* Details box */
-.detailsBox {
-  margin-top: 20px;
-  padding: 15px;
-  background: #f7faff;
-  border: 1px solid #dbe7ff;
-  border-radius: 14px;
-  display: none;
-}
-
-.topRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.topRow h3 {
-  margin: 0;
-  color: #2c3e50;
-}
-
-.closeBtn {
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ff3b3b;
-}
-
-.detailsBox p {
-  margin: 8px 0;
-  color: #333;
-}
-
-/* Button */
-.medicineBtn {
-  margin-top: 10px;
   width: 100%;
-  background: #28a745;
-  color: white;
-  border: none;
+  height: 100vh;
+  background-color: rgb(245, 21, 21);
+}
+
+.listView {
+  width: 500px;
+  height: 100vh;
+  border: 1px solid black;
+  margin: auto;
+  overflow: scroll;
+  background-color: green;
+
+}
+
+.datalist {
+  width: 100%;
+  height: max-content;
   padding: 10px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
+  text-align: center;
+  background-color: rgb(226, 230, 13);
+  border: 1px solid black;
+  margin: 2px 0px;
 }
 
-.medicineBtn:hover {
-  background: #218838;
-}
 
-/* Suggestions */
-.suggestions {
-  margin-top: 10px;
-  position: absolute;
-  top: 110%;
-  display: flex;
-  flex-wrap: wrap;
-  width: 420px;
-  gap: 10px;
-}
-
-.suggestions div {
-  padding: 8px 10px;
-  border: 1px solid #ddd;
+.btnd button {
+  background-color: rgb(47, 245, 47);
+  padding: 5px 10px;
   border-radius: 5px;
-  margin-top: 6px;
-  cursor: pointer;
-  background: #fafafa;
-  box-shadow: 2px 1px 2px 1px rgb(251, 0, 0);
 }
 
-.suggestions div:hover {
-  background: #eef4ff;
+.btnd button:nth-child(2) {
+  background-color: rgb(74, 31, 231);
 }
-
-/* Medicine popup */
-.viewmedicien {
-  margin-top: 20px;
-  left: 50%;
-  width: 100%;
-  background: white;
-  width: 100%;
-  padding: 20px;
-  border-radius: 14px;
-  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); */
-}
-
-.closeBtn1 {
-  float: right;
-  cursor: pointer;
-  font-size: 18px;
-  color: red;
+.btnd{
+  display: none;
 }
