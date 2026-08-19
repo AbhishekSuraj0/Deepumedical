@@ -1,11 +1,36 @@
-const fruits = ["apple", "banana", "cherry", "date"];
+var list = ["abhishek", "Suraj", "Mohini", "Paytm", "apple",
+    "abhishek", "Suraj", "Mohini", "Paytm", "apple", "abhishek",
+    "Suraj", "Mohini", "Paytm", "apple", "abhishek", "Suraj", "Mohini", "Paytm", "apple",
+    "abhishek", "Suraj", "Mohini", "Paytm", "apple", "abhishek",
+    "Suraj", "Mohini", "Paytm", "apple", "abhishek", "Suraj", "Mohini", "Paytm", "apple",
+    "abhishek", "Suraj", "Mohini", "Paytm", "apple", "abhishek",
+    "Suraj", "Mohini", "Paytm", "apple", "abhishek", "Suraj", "Mohini", "Paytm", "apple",
+    "abhishek", "Suraj", "Mohini", "Paytm", "apple", "abhishek",
+    "Suraj", "Mohini", "Paytm", "apple","abhishek", "Suraj", "Mohini", "Paytm", "apple",
+    "abhishek", "Suraj", "Mohini", "Paytm", "apple", "abhishek",
+    "Suraj", "Mohini", "Paytm", "apple", "abhishek", "Suraj", "Mohini", "Paytm", "apple",
+    "abhishek", "Suraj", "Mohini", "Paytm", "apple", "abhishek",
+    "Suraj", "Mohini", "Paytm", "apple", "abhishek", "Suraj", "Mohini", "Paytm", "apple",
+    "abhishek", "Suraj", "Mohini", "Paytm", "apple", "abhishek",
+    "Suraj", "Mohini", "Paytm", "apple", "abhishek", "Suraj", "Mohini", "Paytm", "apple",
+    "abhishek", "Suraj", "Mohini", "Paytm", "apple", "abhishek",
+    "Suraj", "Mohini", "Paytm", "apple"];
 
-const index = fruits.indexOf("cherry");
+var m = document.getElementById("m");
 
-console.log(index); 
-// Output: 2 (because "cherry" is at index 2)
+for (let i = 0; i < list.length / 5; i++) {
+    var div = document.createElement('div');
+    div.className = "div1";
 
-const missing = fruits.indexOf("orange");
+    // CHANGED 'var' TO 'let' HERE
+    let o = i + 1;
 
-console.log(missing); 
-// Output: -1 (because it's not in the array)
+    // This displays: 3, 6, 9, 12, etc.
+    div.innerHTML = `${o * 1}`;
+
+    div.addEventListener("click", () => {
+        alert(o); // Now it correctly alerts 1, 2, 3... corresponding to the box clicked!
+    });
+
+    m.append(div);
+}

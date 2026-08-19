@@ -3,51 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>UPI QR Code Generator</title>
-    <!-- Load QRCode.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        #qrcode {
-            margin: 20px auto;
-            display: inline-block;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
 </head>
+<style>
+    .m {
+        width: 100%;
+        height: max-content;
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        gap: 8px;
+        overflow-x: scroll;
+    }
+    .div1{
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        padding: 8px;
+    }
+</style>
 
 <body>
+    <main class="m" id="m">
 
-    <h2>Scan & Pay using any UPI App</h2>
-    <div id="qrcode"></div>
-    <p>Supports GPay, PhonePe, Paytm, BHIM</p>
-
-    <script>
-        // 1. Define your payment parameters
-        const upiId = "6387215755@ptaxis";            // Change to your actual UPI ID
-        const payeeName = "Iconstar Business";       // Change to your business name
-        const amount = "1.00";                    // Fixed amount (Optional: Use "" for dynamic input)
-        const note = "Payment for Services";         // Short remark (Optional)
-
-        // 2. Build the strict NPCI formatted UPI string
-        // encodeURIComponent handles spaces or special characters safely
-        const upiString = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}&tn=${encodeURIComponent(note)}&cu=INR`;
-
-        // 3. Generate the QR Code
-        new QRCode(document.getElementById("qrcode"), {
-            text: upiString,
-            width: 500,
-            height: 500,
-            colorDark: "#000",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.M // Medium error correction works best for screens
-        });
-    </script>
-
+    </main>
 </body>
+<script src="test.js"></script>
 
 </html>

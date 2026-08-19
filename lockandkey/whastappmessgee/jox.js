@@ -8,10 +8,6 @@ fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/wha
     .then((data) => {
         const mainDiv = document.querySelector(".maindiv");
         mainDiv.innerHTML = "";
-
-
-
-
         data.slice(0, 100).forEach((element, i) => {
             const div = document.createElement("div");
             div.classList.add("div1");
