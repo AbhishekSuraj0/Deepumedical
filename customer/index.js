@@ -2,6 +2,19 @@ var contactData = document.getElementById("contactData");
 const url = "https://script.google.com/macros/s/AKfycbzutnWIxWzZHfzWOwomlw1Z4uZwsTzm028nqwFNGlOZvBoWzwOiRyhiYdcMM3CbJHN6Ow/exec"
 var sheet = "1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ";
 
+
+let messageData = "";
+
+fetch(`https://api.npoint.io/b8e4760225ed1bcf6aa4?t=${Date.now()}`)
+  .then(res => res.json())
+  .then(data => {
+    messageData = data[0].messageData;
+    console.log(messageData);
+  })
+  .catch(err => {
+    console.error("Error:", err);
+  });
+
 fetch(`https://opensheet.elk.sh/${sheet}/customer`)
   .then(res => res.json())
   .then(data => {
@@ -37,7 +50,9 @@ fetch(`https://opensheet.elk.sh/${sheet}/customer`)
       // WhatsApp
       whatsappbtn.addEventListener("click", (e) => {
         e.stopPropagation();
-        window.open(`https://wa.me/91${k.customerNumber}`, "_blank");
+        window.open(`https://wa.me/91${k.customerNumber}?text=${messageData}`, "_blank");
+
+
         var data = {
           number : k.customerNumber ,
           color : "green"
@@ -50,6 +65,7 @@ fetch(`https://opensheet.elk.sh/${sheet}/customer`)
           mode:"no-cors",
           body: JSON.stringify(data) // Pass your object/data here
         });
+
       });
       // Call
       callNow.addEventListener("click", (e) => {
