@@ -18,6 +18,7 @@ fetch(`https://api.npoint.io/b8e4760225ed1bcf6aa4?t=${Date.now()}`)
 fetch(`https://opensheet.elk.sh/${sheet}/customer`)
   .then(res => res.json())
   .then(data => {
+    
     data.forEach(k => {
       var div = document.createElement("div");
       div.className = "datalist";

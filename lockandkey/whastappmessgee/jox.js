@@ -1,17 +1,27 @@
 const scdata = "https://script.google.com/macros/s/AKfycbyc8dj5vgdZ9jH9LsCvv-2FIlqKbxwrSxOiv_pTB8Q0zUq-0diOpntaqbQaIM2Acuf4/exec";
+const kot = "https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/whatsappdata"
+
+
+
+
+
+
+
+
+
 
 
 
 // Fetch data from the Google Sheet API proxy
-fetch("https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/whatsappdata")
+fetch(kot)
     .then(res => res.json())
     .then((data) => {
         const mainDiv = document.querySelector(".maindiv");
         mainDiv.innerHTML = "";
-        data.slice(0, 100).forEach((element, i) => {
+        data.slice(0, 50).forEach((element, i) => {
             const div = document.createElement("div");
             div.classList.add("div1");
-            div.innerHTML = `${i + 1}. Message on Different Number`;
+            div.innerHTML = `${i + 1}. New Whatsapp Number`;
 
             // Initial color setup based on sheet data
             if (element.color && element.color.trim().toLowerCase() === "green") {
