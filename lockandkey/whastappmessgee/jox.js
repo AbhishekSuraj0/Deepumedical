@@ -2,16 +2,6 @@ const scdata = "https://script.google.com/macros/s/AKfycbyc8dj5vgdZ9jH9LsCvv-2FI
 const kot = "https://opensheet.elk.sh/1G5kY3GGIv-wyA8qq-Um_SazeQgzUzyVMCfRtXXAzrVA/whatsappdata"
 
 
-
-
-
-
-
-
-
-
-
-
 // Fetch data from the Google Sheet API proxy
 fetch(kot)
     .then(res => res.json())

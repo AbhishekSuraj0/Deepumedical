@@ -1,0 +1,67 @@
+var contactData = document.getElementById("contactData");
+const url = "https://script.google.com/macros/s/AKfycbzutnWIxWzZHfzWOwomlw1Z4uZwsTzm028nqwFNGlOZvBoWzwOiRyhiYdcMM3CbJHN6Ow/exec"
+var sheet = "1cb28gYunLwsO9v6Jpxbhxg6NqGYN_9v0MwCJ5e-GyzQ";
+
+
+let messageData = "";
+
+fetch(`https://api.npoint.io/b8e4760225ed1bcf6aa4?t=${Date.now()}`)
+  .then(res => res.json())
+  .then(data => {
+    messageData = data[0].messageData;
+    console.log(messageData);
+  })
+  .catch(err => {
+    console.error("Error:", err);
+  });
+
+fetch(`https://opensheet.elk.sh/${sheet}/aminabadShopnameandnumber`)
+  .then(res => res.json())
+  .then(data => {
+    
+    data.forEach(k => {
+      var div = document.createElement("div");
+      div.className = "datalist";
+      div.innerHTML = `
+        <label>${k.name}</label>
+        <div class="circle"></div>
+        <div class="btnd" style="display: none;">
+          <button class="whatappbtn">WhatsApp</button>
+          <button class="callNow">Call Now</button>                   
+        </div>
+      `;
+      if (k.color === "red") {
+        div.querySelector(".circle").style.backgroundColor = "red"
+      } else {
+        div.querySelector(".circle").style.backgroundColor = "green"
+      }
+      contactData.append(div);
+      var whatsappbtn = div.querySelector(".whatappbtn");
+      var callNow = div.querySelector(".callNow");
+      var seetbn = div.querySelector(".btnd");
+      // Customer div click
+      div.addEventListener("click", () => {
+        // Sabhi buttons hide karo
+        document.querySelectorAll(".btnd").forEach(btn => {
+          btn.style.display = "none";
+        });
+        // Current customer ka button show karo
+        seetbn.style.display = "block";
+      });
+      // WhatsApp
+      whatsappbtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        window.open(`https://wa.me/91${k.whastapp}?text=Hello`, "_blank");
+
+
+      });
+      // Call
+      callNow.addEventListener("click", (e) => {
+        e.stopPropagation();
+        window.location.href = `tel:${k.number}`;
+      });
+    });
+  })
+  .catch(err => {
+    console.log("Error:", err);
+  });
