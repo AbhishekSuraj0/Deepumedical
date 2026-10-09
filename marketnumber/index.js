@@ -23,7 +23,7 @@ fetch(`https://opensheet.elk.sh/${sheet}/aminabadShopnameandnumber`)
       var div = document.createElement("div");
       div.className = "datalist";
       div.innerHTML = `
-        <label>${k.name}</label>
+        <label>${k.name.toUpperCase()}</label>
         <div class="circle"></div>
         <div class="btnd" style="display: none;">
           <button class="whatappbtn">WhatsApp</button>
@@ -51,7 +51,7 @@ fetch(`https://opensheet.elk.sh/${sheet}/aminabadShopnameandnumber`)
       // WhatsApp
       whatsappbtn.addEventListener("click", (e) => {
         e.stopPropagation();
-        window.open(`https://wa.me/91${k.whastapp}?text=Hello`, "_blank");
+        window.open(`https://wa.me/91${k.whastapp}?text=hello`, "_blank");
 
 
       });
